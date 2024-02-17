@@ -1,1 +1,2 @@
 Django === 5.0.2 # 2024-02-17 Current Version of Django
+psycopg2 === 2.9.5 # 2024-02-17 Current Version of psycopg2
