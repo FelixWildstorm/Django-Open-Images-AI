@@ -1,2 +1,5 @@
 Django === 5.0.2 # 2024-02-17 Current Version of Django
 psycopg2 === 2.9.5 # 2024-02-17 Current Version of psycopg2
+celery === 5.3.6 # 2024-02-17 Current Version of Celery
+redis # 2024-02-17 Current Version of Redis
+flower === 2.0.1 # 2024-02-17 Current Version of Flower

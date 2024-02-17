@@ -11,13 +11,33 @@ services:
              python manage.py runserver 0.0.0.0:8000"
     environment:
       - DEBUG=1
+      - ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
       - DB_HOST=database
       - DB_NAME=django-dev-db
       - DB_USER=devuser
       - DB_PASS=devpassword123
+      - DB_PORT=5432
+      - CELERY_BROKER=redis://redis:6379/0
+      - CELERY_BACKEND=redis://redis:6379/0
     depends_on:
       database:
         condition: service_healthy
+      redis:
+        condition: service_healthy
+  
+  celery:
+    build: .
+    command: celery -A app worker -l INFO
+    volumes:
+      - .:/usr/src/app
+    environment:
+        - DEBUG=1
+        - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+        - CELERY_BROKER=redis://redis:6379/0
+        - CELERY_BACKEND=redis://redis:6379/0
+    depends_on:
+        - app
+        - redis
 
   database:
     image: postgres:12-alpine
@@ -32,6 +52,14 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-
+  
+  redis:
+    image: redis:alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+  
 volumes:
   db-dev-data:
