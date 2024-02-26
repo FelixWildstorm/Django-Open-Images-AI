@@ -1,26 +1,69 @@
-# Smart-weighing-scale-App
-The Smart Weighing Scale Image-to-Excel Converter is a versatile tool designed to streamline the process of capturing data from digital scales and organizing it efficiently for further analysis. 
-This repository provides a comprehensive solution for automating the extraction of numerical data from images of digital scales and exporting it directly into Excel spreadsheets for easy processing.
+Certainly! Below is a sample README file for a Django project that utilizes the Open Images dataset:
 
-# Key Features:
+---
 
-Image Recognition: Utilizes advanced image recognition algorithms to accurately identify and extract numerical readings from images of digital scales.
+# Django Open Images App
 
-Excel Integration: Seamlessly integrates with Microsoft Excel, allowing users to directly transfer extracted data into Excel spreadsheets without manual input.
+This Django application utilizes the Open Images dataset provided by Google. Open Images Dataset is renowned as the Goliath among existing computer vision datasets. It comprises approximately 9 million images annotated with various metadata including image-level labels, object bounding boxes, object segmentation masks, visual relationships, and localized narratives. Notably, it contains a staggering total of 16 million bounding boxes spanning across 600 object classes, annotated on 1.9 million images. Hence, it stands as the largest dataset available with object location annotations.
 
-Customizable Processing: Offers customization options to tailor the extraction process according to specific scale formats, ensuring compatibility with a wide range of digital scale models.
+## Installation
 
-Batch Processing: Supports batch processing capabilities, enabling users to process multiple images simultaneously for increased efficiency.
+1. Clone the repository:
 
-Error Handling: Implements robust error handling mechanisms to detect and handle anomalies in image data, ensuring high accuracy and reliability of extracted measurements.
+   ```
+   git clone https://github.com/your_username/django-open-images-app.git
+   ```
 
-User-Friendly Interface: Features an intuitive user interface with clear instructions and prompts, making it easy for users to interact with the tool and perform data extraction tasks effortlessly.
+2. Navigate into the project directory:
 
-Open-Source: Developed as an open-source project, allowing for community contributions, customization, and continuous improvement of functionality and performance.
+   ```
+   cd django-open-images-app
+   ```
 
-# Usage:
+3. Install dependencies:
 
-Capture images of digital scale readings using a camera or smartphone.
-Input the images into the Smart Weighing Scale Image-to-Excel Converter.
-The tool automatically processes the images, extracts the numerical readings, and exports them into an Excel spreadsheet.
-Review and analyze the extracted data within Excel or further process it according to specific requirements.
+   ```
+   pip install -r requirements.txt
+   ```
+
+4. Apply migrations:
+
+   ```
+   python manage.py migrate
+   ```
+
+5. Start the Django development Docker:
+
+   ```
+   docker-compose built
+   docker-compose up
+   ```
+
+6. Access the application at `http://localhost:8000` in your web browser.
+
+## Usage
+
+This Django application provides various functionalities for interacting with the Open Images dataset:
+
+- **View Images**: Browse through the extensive collection of images annotated with image-level labels and object bounding boxes.
+- **Search**: Utilize the search functionality to discover images based on specific object classes or attributes.
+- **Download Annotations**: Download the annotations for further analysis or integration into computer vision models.
+- **Contribute**: Contribute to the dataset by uploading new images along with annotations.
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+2. Create your feature branch (`git checkout -b feature/YourFeature`).
+3. Commit your changes (`git commit -am 'Add some feature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Feel free to modify and expand upon this README according to your specific project requirements!
