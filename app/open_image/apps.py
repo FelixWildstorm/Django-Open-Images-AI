@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class SmartWeighingScaleConfig(AppConfig):
+class OpenImageConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'smart_weighing_scale'
+    name = 'open_image'

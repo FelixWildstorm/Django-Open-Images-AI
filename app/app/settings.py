@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # local apps
-    'smart_weighing_scale',
 ]
 
 MIDDLEWARE = [
